@@ -8,9 +8,8 @@ const mapMovementFromApiToViewModel = (movement) => {
   };
 };
 
-export const mapMovementsListFromApiToViewModelById = (id, movements) => {
+export const mapMovementsListFromApiToViewModelById = (movements) => {
   return movements
-    .filter((movement) => movement.accountId === id)
     .map((movement) => mapMovementFromApiToViewModel(movement));
 };
 
