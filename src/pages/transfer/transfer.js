@@ -22,6 +22,7 @@ let transfer = {
   day: '',
   month: '',
   year: '',
+  date: '',
   email: '',
 };
 
@@ -102,6 +103,7 @@ onUpdateField('day', (event) => {
   transfer = {
     ...transfer,
     day: value,
+    date: `${transfer.year}-${transfer.month}-${value}`
   };
   formValidation.validateField('day', transfer.day).then((result) => {
     onSetError('day', result);
@@ -113,6 +115,7 @@ onUpdateField('month', (event) => {
   transfer = {
     ...transfer,
     month: value,
+    date: `${transfer.year}-${value}-${transfer.day}`
   };
   formValidation.validateField('month', transfer.month).then((result) => {
     onSetError('month', result);
@@ -124,6 +127,7 @@ onUpdateField('year', (event) => {
   transfer = {
     ...transfer,
     year: value,
+    date: `${value}-${transfer.month}-${transfer.day}`
   };
   formValidation.validateField('year', transfer.year).then((result) => {
     onSetError('year', result);
