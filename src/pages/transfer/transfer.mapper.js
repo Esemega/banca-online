@@ -1,7 +1,12 @@
 export const mapTransferFromViewModelToApi = (transfer) => {
   return {
-    ...transfer,
+    accountId: transfer.accountId,
+    iban: transfer.iban,
+    name: transfer.name,
+    amount: transfer.amount,
     description: transfer.concept,
-    transaction: new Date(transfer.year, transfer.month, transfer.day)
+    notes: transfer.notes,
+    transactionDate: transfer.date,
+    email: transfer.email,
   };
 };
