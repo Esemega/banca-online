@@ -7,15 +7,15 @@ import {
 } from './movements.mapper';
 import { onSetValues } from '../../common/helpers';
 
-const params = history.getParams();
+const { id } = history.getParams();
+const hasId = Boolean(id);
 
-getMovements()
-.then((movements) => {
-  addMovementRows(mapMovementsListFromApiToViewModelById(params.id, movements));
-})
-.catch(error => console.log(error));
+if (hasId) {
+  getMovements(id).then((movements) => {
+    addMovementRows(mapMovementsListFromApiToViewModelById(movements));
+  });
 
-getAccount(params.id).then((account) => {
-  onSetValues(mapAccountFromApiToViewModel(account));
-})
-.catch(error => console.log(error));
+  getAccount(id).then((account) => {
+    onSetValues(mapAccountFromApiToViewModel(account));
+  });
+}
