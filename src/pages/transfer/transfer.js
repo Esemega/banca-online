@@ -157,9 +157,7 @@ const onSend = () => {
 onSubmitForm('transfer-button', () => {
   formValidation.validateForm(transfer).then((result) => {
     onSetFormErrors(result);
-    console.log({ result });
     if (result.succeeded) {
-      console.log({ transfer });
       onSend().then( apiTransfer => history.back());
     }
   });
