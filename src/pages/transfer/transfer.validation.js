@@ -1,6 +1,13 @@
 import { Validators, createFormValidation } from '@lemoncode/fonk';
 import { iban } from '@lemoncode/fonk-iban-validator';
 import { isNumber } from '@lemoncode/fonk-is-number-validator';
+import { laterDate } from '@lemoncode/fonk-later-date-validator';
+import {
+  dayValidator,
+  monthValidator,
+  yearValidator,
+  dateValidator,
+} from './transfer.custom.validation';
 
 const messageRequired = 'Por favor, rellene este campo obligatorio.';
 
@@ -49,17 +56,39 @@ const validationSchema = {
         validator: isNumber.validator,
         message: 'Por favor, introduzca un número.',
       },
+      {
+        validator: dayValidator,
+      },
     ],
     month: [
       {
         validator: isNumber.validator,
         message: 'Por favor, introduzca un número.',
       },
+      {
+        validator: monthValidator,
+      },
     ],
     year: [
       {
         validator: isNumber.validator,
         message: 'Por favor, introduzca un número.',
+      },
+      {
+        validator: yearValidator,
+      },
+    ],
+    date: [
+      {
+        validator: dateValidator,
+      },
+      {
+        validator: laterDate.validator,
+        message: 'Por favor, introduzca una fecha posterior.',
+        customArgs: {
+          date: new Date(),
+          parseStringToDateFn: (value) => new Date(value),
+        },
       },
     ],
     email: [
