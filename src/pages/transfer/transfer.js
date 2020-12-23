@@ -1,4 +1,4 @@
-import { history } from '../../core/router';
+import { history, routes } from '../../core/router';
 import { getAccounts, sendTransfer } from './transfer.api';
 import { setAccountOptions } from './transfer.helpers';
 import {
@@ -158,7 +158,7 @@ onSubmitForm('transfer-button', () => {
   formValidation.validateForm(transfer).then((result) => {
     onSetFormErrors(result);
     if (result.succeeded) {
-      onSend().then( apiTransfer => history.back());
+      onSend().then( apiTransfer => history.push(routes.accountList));
     }
   });
 });
