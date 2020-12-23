@@ -4,9 +4,9 @@
       "id": "1",
       "iban": "ES91 2100 0418 4502 0005 1332",
       "type": "1",
-      "name": "Gastos mes",
       "balance": 1490,
-      "lastTransaction": "2019-12-09T21:30:00"
+      "lastTransaction": "2019-12-09T21:30:00",
+      "name": "Gastos mensual"
     },
     {
       "id": "2",
@@ -23,6 +23,14 @@
       "name": "Ahorro",
       "balance": 8500,
       "lastTransaction": "2019-11-15T08:29:04"
+    },
+    {
+      "iban": "GI46 ZSZB 43D4 CM0L 7224 073",
+      "name": "Empresa S.A.",
+      "type": "1",
+      "balance": 2000,
+      "lastTransaction": "2020-12-23T19:05:40.459Z",
+      "id": "86r6V39"
     }
   ],
   "movements": [
@@ -106,7 +114,39 @@
       "transaction": "2019-11-29T11:30:10",
       "realTransaction": "2019-11-29T11:30:10",
       "accountId": "3"
+    },
+    {
+      "id": "10",
+      "description": "Nomina Diciembre",
+      "amount": 2000,
+      "balance": 2000,
+      "transaction": "2020-12-20T11:30:10",
+      "realTransaction": "2020-12-20T11:30:10",
+      "accountId": "86r6V39"
     }
   ],
-  "transfer": []
+  "transfer": [
+    {
+      "accountId": "86r6V39",
+      "iban": "ES91 2100 0418 4502 0005 1332",
+      "name": "Antonio Gonzalez",
+      "amount": "1200",
+      "description": "Nómina Diciembre",
+      "notes": "",
+      "transactionDate": "2020-12-29",
+      "email": "antonio@email.es",
+      "id": 1
+    },
+    {
+      "accountId": "2",
+      "iban": "ES66 2100 0418 4012 3456 7891",
+      "name": "Ginebra Payá",
+      "amount": "350",
+      "description": "Seguro coche",
+      "notes": "Prima anual",
+      "transactionDate": "",
+      "email": "ginebra@yahoo.es",
+      "id": 2
+    }
+  ]
 }
